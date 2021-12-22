@@ -7,7 +7,7 @@
         <meta charset="utf-8">
     </head>
     <body style="height: 100%; margin: 0">
-        <div id="container" style="height: 100%"></div>
+        <div id="container" style="width: 600px;height:400px;"></div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
         <script type="text/javascript">
@@ -29,7 +29,9 @@ $.get('/test.json').done(function(data) {
     xAxis: {
       data: data.date
     },
-    yAxis: {},
+    yAxis: {
+    min: "dataMin"
+    },
     series: [
       {
         name: '初始价格',
