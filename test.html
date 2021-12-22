@@ -7,7 +7,7 @@
         <meta charset="utf-8">
     </head>
     <body style="height: 100%; margin: 0">
-        <div id="container" style="width: 600px;height:400px;"></div>
+        <div id="container" style="height:400px;"></div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
         <script type="text/javascript">
@@ -24,12 +24,23 @@ $.get('/test.json').done(function(data) {
     title: {
       text: '异步数据加载示例'
     },
-    tooltip: {},
+    tooltip: {
+        trigger: 'axis'
+    },
     legend: {},
+    grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
     xAxis: {
+      type: 'category',
+      boundaryGap: false,
       data: data.date
     },
     yAxis: {
+    type: 'value',
     min: "dataMin"
     },
     series: [
@@ -47,9 +58,6 @@ $.get('/test.json').done(function(data) {
   });
 });
 
-// if (option && typeof option === 'object') {
-//     myChart.setOption(option);
-// }
 
         </script>
     </body>
