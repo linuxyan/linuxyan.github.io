@@ -5,22 +5,24 @@
 <html style="height: 100%">
     <head>
         <meta charset="utf-8">
-    </head>
-    <body style="height: 100%; margin: 0">
-        <div id="container" style="height:400px;"></div>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
-        <script type="text/javascript">
-var dom = document.getElementById("container");
-var myChart = echarts.init(dom);
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container1" style="height:400px;"></div>
+        <div id="container2" style="height:400px;"></div>
+        <div id="container3" style="height:400px;"></div>
+        
+<script type="text/javascript">
+var dom1 = document.getElementById("container1");
+var dom2 = document.getElementById("container2");
+var dom3 = document.getElementById("container3");
+var myChart1 = echarts.init(dom1);
+var myChart2 = echarts.init(dom2);
+var myChart3 = echarts.init(dom3);
 
 $.get('/test.json').done(function(data) {
-  // data 的结构:
-  // {
-  //     categories: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
-  //     values: [5, 20, 36, 10, 10, 20]
-  // }
-  myChart.setOption({
+  myChart1.setOption({
     title: {
       text: '异步数据加载示例'
     },
@@ -57,8 +59,82 @@ $.get('/test.json').done(function(data) {
     ]
   });
 });
-
-
+    $.get('/test.json').done(function(data) {
+  myChart2.setOption({
+    title: {
+      text: '异步数据加载示例'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {},
+    grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: data.date
+    },
+    yAxis: {
+    type: 'value',
+    min: "dataMin"
+    },
+    series: [
+      {
+        name: '初始价格',
+        type: 'line',
+        data: data.init_price
+      },
+      {
+        name: '当前价格',
+        type: 'line',
+        data: data.curr_price
+      },
+    ]
+  });
+});
+    $.get('/test.json').done(function(data) {
+  myChart3.setOption({
+    title: {
+      text: '异步数据加载示例'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {},
+    grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: data.date
+    },
+    yAxis: {
+    type: 'value',
+    min: "dataMin"
+    },
+    series: [
+      {
+        name: '初始价格',
+        type: 'line',
+        data: data.init_price
+      },
+      {
+        name: '当前价格',
+        type: 'line',
+        data: data.curr_price
+      },
+    ]
+  });
+});
         </script>
     </body>
 </html>
