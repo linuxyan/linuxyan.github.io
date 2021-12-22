@@ -1,0 +1,55 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/zh/editor.html?c=line-smooth
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+
+$.get('price.json').done(function(data) {
+  // data 的结构:
+  // {
+  //     categories: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+  //     values: [5, 20, 36, 10, 10, 20]
+  // }
+  myChart.setOption({
+    title: {
+      text: '异步数据加载示例'
+    },
+    tooltip: {},
+    legend: {},
+    xAxis: {
+      data: data.date
+    },
+    yAxis: {},
+    series: [
+      {
+        name: '初始价格',
+        type: 'line',
+        data: data.init_price
+      },
+      {
+        name: '当前价格',
+        type: 'line',
+        data: data.curr_price
+      },
+    ]
+  });
+});
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
