@@ -3,16 +3,16 @@
 -->
 <!DOCTYPE html>
 <html style="height: 100%">
-    <head>
-        <meta charset="utf-8">
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
-    </head>
-    <body style="height: 100%; margin: 0">
-        <div id="container1" style="height:400px;"></div>
-        <div id="container2" style="height:400px;"></div>
-        <div id="container3" style="height:400px;"></div>
-        
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+</head>
+<body style="height: 100%; margin: 0">
+<div id="container1" style="height:400px;"></div>
+<div id="container2" style="height:400px;"></div>
+<div id="container3" style="height:400px;"></div>
+
 <script type="text/javascript">
 var dom1 = document.getElementById("container1");
 var dom2 = document.getElementById("container2");
@@ -21,7 +21,7 @@ var myChart1 = echarts.init(dom1);
 var myChart2 = echarts.init(dom2);
 var myChart3 = echarts.init(dom3);
 
-$.get('/test.json').done(function(data) {
+$.get('/data_json/test.json').done(function(data) {
   myChart1.setOption({
     title: {
       text: '异步数据加载示例'
@@ -59,7 +59,7 @@ $.get('/test.json').done(function(data) {
     ]
   });
 });
-    $.get('/test.json').done(function(data) {
+    $.get('/data_json/test.json').done(function(data) {
   myChart2.setOption({
     title: {
       text: '异步数据加载示例'
@@ -97,7 +97,7 @@ $.get('/test.json').done(function(data) {
     ]
   });
 });
-    $.get('/test.json').done(function(data) {
+    $.get('/data_json/test.json').done(function(data) {
   myChart3.setOption({
     title: {
       text: '异步数据加载示例'
@@ -135,7 +135,8 @@ $.get('/test.json').done(function(data) {
     ]
   });
 });
-        </script>
-    </body>
+
+</script>
+</body>
 </html>
     
