@@ -1,0 +1,47 @@
+name: data_source
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - '**.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+
+      - name: 'Install requirements'
+        run: pip install -r requirements.txt
+
+      - name: 'Working'
+        run:
+          python -u data_source.py
+
+      - name: commit
+        run: |
+          git config --global user.email linuxcy@126.com
+          git config --global user.name Yan
+          git add .
+          git commit -m "update json data" -a
+
+      - name: Push json data
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+
+
+

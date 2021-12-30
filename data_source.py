@@ -45,3 +45,7 @@ json_data_name = 'record_data.json'
 json_data = data.values.tolist()
 with open('data_json/' + json_data_name, 'w') as file_obj:
     json.dump(json_data, file_obj, indent=4)
+
+# create README.md
+with open("README.md", "w") as file_obj:
+    data.to_markdown(file_obj)
