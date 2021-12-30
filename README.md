@@ -1,37 +1,17 @@
-## Hello thelink.vip
-
-You can use the [editor on GitHub](https://github.com/linuxyan/linuxyan.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/linuxyan/linuxyan.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+|    | 日期        |   初始价格 |   当前价格 |    金额 |       数量 |    总金额 |       总持仓 |      总市值 |   盈亏比例 |
+|---:|:----------|-------:|-------:|------:|---------:|-------:|----------:|---------:|-------:|
+|  0 | 2021.1.1  |      1 |   1.02 | 10000 |  98.0392 |  10000 |   98.0392 |  100     | -99    |
+|  1 | 2021.2.1  |      1 |   1.02 | 10000 |  98.0392 |  20000 |  196.078  |  200     | -99    |
+|  2 | 2021.3.1  |      1 |   1.04 | 11000 | 105.769  |  31000 |  301.848  |  313.922 | -98.99 |
+|  3 | 2021.4.1  |      1 |   1.02 | 10000 |  98.0392 |  41000 |  399.887  |  407.885 | -99.01 |
+|  4 | 2021.5.1  |      1 |   1.02 | 10000 |  98.0392 |  51000 |  497.926  |  507.885 | -99    |
+|  5 | 2021.6.1  |      1 |   1.02 | 10000 |  98.0392 |  61000 |  595.965  |  607.885 | -99    |
+|  6 | 2021.7.1  |      1 |   1.02 | 10000 |  98.0392 |  71000 |  694.005  |  707.885 | -99    |
+|  7 | 2021.8.1  |      1 |   1.06 | 10000 |  94.3396 |  81000 |  788.344  |  835.645 | -98.97 |
+|  8 | 2021.9.1  |      1 |   1.02 | 12000 | 117.647  |  93000 |  905.991  |  924.111 | -99.01 |
+|  9 | 2021.10.1 |      1 |   1.02 | 10000 |  98.0392 | 103000 | 1004.03   | 1024.11  | -99.01 |
+| 10 | 2021.11.1 |      1 |   1.02 | 10000 |  98.0392 | 113000 | 1102.07   | 1124.11  | -99.01 |
+| 11 | 2021.12.1 |      1 |   1.1  | 10000 |  90.9091 | 123000 | 1192.98   | 1312.28  | -98.93 |
+| 12 | 2022.1.1  |      1 |   1.12 | 10000 |  89.2857 | 133000 | 1282.26   | 1436.14  | -98.92 |
+| 13 | 2022.2.1  |      1 |   1.12 | 10000 |  89.2857 | 143000 | 1371.55   | 1536.14  | -98.93 |
+| 14 | 2022.3.1  |      1 |   1.15 | 10000 |  86.9565 | 153000 | 1458.51   | 1677.28  | -98.9  |
