@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 import json
 
-data = pd.read_excel(u'金额数据.xlsx')
+data = pd.read_excel(u'data_source/金额数据.xlsx')
 data['总金额'] = data['金额'].cumsum()
 data['总持仓'] = data['数量'].cumsum()
 data['总市值'] = data['当前价格'] * data['总持仓']
