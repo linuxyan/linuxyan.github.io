@@ -17,6 +17,12 @@ data['总市值'] = data['当前价格'] * data['总持仓']
 data['盈亏比例'] = np.round((data['总市值'] / data['总金额'] - 1) * 100, 2)
 print(data)
 
+# 填充数据
+df = pd.DataFrame({'dt_str': pd.date_range(data['日期'].max(), '2032-12-30', freq='30D')})
+df['日期'] = df['dt_str'].dt.strftime('%Y.%m.%d')
+data = pd.concat([data, df[['日期']]])
+data = data.fillna(axis=0, method='ffill')
+
 # 初次买入价格和当前价格
 json_data, json_data_name = {}, 'index_data.json'
 json_data['日期'] = data['日期'].values.tolist()
