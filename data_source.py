@@ -13,7 +13,7 @@ import json
 data = pd.read_excel(u'data_source/金额数据.xlsx')
 data['总金额'] = data['金额'].cumsum()
 data['总持仓'] = data['数量'].cumsum()
-data['总市值'] = data['当前价格'] * data['总持仓']
+data['总市值'] = np.round(data['当前价格'] * data['总持仓'], 4)
 data['盈亏比例'] = np.round((data['总市值'] / data['总金额'] - 1) * 100, 2)
 print(data)
 
